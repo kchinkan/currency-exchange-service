@@ -17,7 +17,7 @@ public class CurrencyExchangeController {
     public ResponseEntity<CurrencyExchange> getCurrencyExchange(@PathVariable String from, @PathVariable String to) {
         CurrencyExchange response = service.getFromTo(from, to);
         response.setEnvironment(environment.getProperty("local.server.port"));
-        
+
         return ResponseEntity.ok(response);
     }
 }
